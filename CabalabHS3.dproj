@@ -1,0 +1,158 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{963c1671-d586-492d-8470-6cf06ebc3e9c}</ProjectGuid>
+    <MainSource>CabalabHS3.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>CabalabHS3.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">True</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">9</VersionInfo><VersionInfo Name="Release">79</VersionInfo><VersionInfo Name="Build">2</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">True</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">True</VersionInfo><VersionInfo Name="Locale">1036</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.9.79.2</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">CabalabHS3.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="CabalabHS3.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="Cabalab-Fiches Supplementaires\UnitAPropos.pas">
+      <Form>FormAPropos</Form>
+    </DCCReference>
+    <DCCReference Include="Cabalab-Fiches Supplementaires\Unitfantome.pas">
+      <Form>FormFantome</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode.pas">
+      <Form>Bode_utilisation</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode_abscisse.pas">
+      <Form>Bode_abscisse</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode_Commencer.pas">
+      <Form>Bode_Commencer</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode_logo.pas">
+      <Form>Bode_logo</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode_ordonnee.pas">
+      <Form>Bode_ordonnee</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode_stockage.pas">
+      <Form>Bode_stockage</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide\Unit_aide_Bode_transfert.pas">
+      <Form>Bode_transfert</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeCouleurGraphes.pas">
+      <Form>FormBodeCouleurGraphes</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeLinearite.pas">
+      <Form>FormBodeLinearite</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeNbMesures.pas">
+      <Form>FormBodeNbMesures</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeOptionsSauvegarde.pas">
+      <Form>FormBodeOptions</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodePrincipal.pas">
+      <Form>FormBodePrincipal</Form>
+    </DCCReference>
+    <DCCReference Include="DllDeclHS3\dlldecl.pas" />
+    <DCCReference Include="GBFpourCabaLab\UnitGBF.pas">
+      <Form>FormGBF</Form>
+    </DCCReference>
+    <DCCReference Include="HS3\UnitCabalab.pas">
+      <Form>FormCabaLab</Form>
+    </DCCReference>
+    <DCCReference Include="Mesures XY GTI2_HS3\images pour mesurescaba\Unit1Mesures_XY_Montages.pas">
+      <Form>FormMontagesXY</Form>
+    </DCCReference>
+    <DCCReference Include="Mesures XY GTI2_HS3\Mesures XY HS3\Unit1MesuresCaba_HS3.pas">
+      <Form>Form1MesuresCaba_HS3</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo HS3\FICHES complement oscillo\UnitOscilloHS3NbEchPerso.pas">
+      <Form>FormEchantillons</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo HS3\FICHES complement oscillo\UnitOscilloHS3optionsEnrg.pas">
+      <Form>Options</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo HS3\FICHES complement oscillo\UnitOscilloHS3TransfertRegressi.pas">
+      <Form>FormUTILISATEUR_RegressiTransfert</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo HS3\UnitOscilloHS3.pas">
+      <Form>OscilloCaba</Form>
+    </DCCReference>
+    <DCCReference Include="Petite Voiture\UnitTITvoiture.pas">
+      <Form>FormTitVoiture</Form>
+    </DCCReference>
+    <DCCReference Include="Regressi\ddeman.pas" />
+    <DCCReference Include="Regressi\UnitTransfertRegressi.pas">
+      <Form>FormTransfertRegressi</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Kaiserdecl.pas" />
+    <DCCReference Include="spectre_FFT\regressispecdecl.pas" />
+    <DCCReference Include="spectre_FFT\spectrumFFT.pas">
+      <Form>Fenetre_Spectre</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\UnitSpectreCouleurGraphes.pas">
+      <Form>FormSpectreCouleurGraphes</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT.pas">
+      <Form>FFT_utilisation</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_abscisse.pas">
+      <Form>FFT_abscisse</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_accu.pas">
+      <Form>FFT_accu</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_BdeT.pas">
+      <Form>FFT_BdeT</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_frequence.pas">
+      <Form>FFT_frequence</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_logo.pas">
+      <Form>FFT_logo</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_ordonnee.pas">
+      <Form>FFT_ordonnee</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_repliement.pas">
+      <Form>FFT_exemple_repliement</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_stop.pas">
+      <Form>FFT_stop</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_transfert.pas">
+      <Form>FFT_transfert</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_trigger.pas">
+      <Form>FFT_trigger</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_Base_de_Frequence.pas" />
+    <DCCReference Include="Taceur GTI2_HS3\Traceur HS3\Unit_Traceur_HS3.pas">
+      <Form>Form_Traceur_HS3</Form>
+    </DCCReference>
+    <DCCReference Include="Unit Chemin Scilab\Unit1CheminScilab.pas">
+      <Form>Form1CheminScilab</Form>
+    </DCCReference>
+    <DCCReference Include="Unit_GBF_AWG_AM.pas">
+      <Form>Form_GBF_AWG_AM</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

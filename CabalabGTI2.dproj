@@ -1,0 +1,182 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{a7a2aef3-b0d5-46cc-87c5-952d36a5a74c}</ProjectGuid>
+    <MainSource>CabalabGTI2.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>CabalabGTI2.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1036</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">CabalabGTI2.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="CabalabGTI2.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="Cabalab-Fiches Supplementaires\UnitAPropos.pas">
+      <Form>FormAPropos</Form>
+    </DCCReference>
+    <DCCReference Include="Cabalab-Fiches Supplementaires\Unitfantome.pas">
+      <Form>FormFantome</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode.pas">
+      <Form>Bode_utilisation</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode_abscisse.pas">
+      <Form>Bode_abscisse</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode_Commencer.pas">
+      <Form>Bode_Commencer</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode_logo.pas">
+      <Form>Bode_logo</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode_ordonnee.pas">
+      <Form>Bode_ordonnee</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode_stockage.pas">
+      <Form>Bode_stockage</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\Aide_GTI2\Unit_aide_Bode_transfert.pas">
+      <Form>Bode_transfert</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeCouleurGraphes.pas">
+      <Form>FormBodeCouleurGraphes</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeLinearite.pas">
+      <Form>FormBodeLinearite</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeNbMesures.pas">
+      <Form>FormBodeNbMesures</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodeOptionsSauvegarde.pas">
+      <Form>FormBodeOptions</Form>
+    </DCCReference>
+    <DCCReference Include="Diagramme de Bode\UnitBodePrincipal.pas">
+      <Form>FormBodePrincipal</Form>
+    </DCCReference>
+    <DCCReference Include="DLLDeclGTI2\dlldecl.PAS" />
+    <DCCReference Include="DLLDeclGTI2\UnitFrequencesAcqu.pas" />
+    <DCCReference Include="DLLDeclGTI2\UnitfrequencesGBF.pas" />
+    <DCCReference Include="DLLDeclGTI2\UnitFrequencesGBFfichier.pas" />
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Kaiserdecl.pas" />
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\regressispecdecl.pas" />
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\UnitOsciG2GestClCBLEU.pas">
+      <Form>FormConfigCouleursFFTGTI2BLEU</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT.pas">
+      <Form>FFT_utilisation</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_abscisse.pas">
+      <Form>FFT_abscisse</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_accu.pas">
+      <Form>FFT_accu</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_BdeT.pas">
+      <Form>FFT_BdeT</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_frequence.pas">
+      <Form>FFT_frequence</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_logo.pas">
+      <Form>FFT_logo</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_ordonnee.pas">
+      <Form>FFT_ordonnee</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_repliement.pas">
+      <Form>FFT_exemple_repliement</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_stop.pas">
+      <Form>FFT_stop</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_aide_FFT_transfert.pas">
+      <Form>FFT_transfert</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_Base_de_Frequence.pas" />
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_FFT_mut_GTI2GestionCouleursCourbes.pas">
+      <Form>Form_FFT_mut_ConfigCouleursOscilloGTI2</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_FFT_mut_GTI2TIMEOUT.pas">
+      <Form>form_FFT_mut_TIMEOUT</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\fiches_complémentaire_FFT_mut_GTI2\Unit_FFT_mut_GTI2TransfertRegressiUtilisateur.pas">
+      <Form>Form_FFT_mut_GTI2TransfertRegressiUtilisateur</Form>
+    </DCCReference>
+    <DCCReference Include="FFT\Unit_FFT_mut_GTI2.pas">
+      <Form>Form_FFT_mut_GTI2</Form>
+    </DCCReference>
+    <DCCReference Include="GBFpourCabaLab\UnitGBF.pas">
+      <Form>FormGBF</Form>
+    </DCCReference>
+    <DCCReference Include="GTI2\UnitCabalab.pas">
+      <Form>FormCabaLab</Form>
+    </DCCReference>
+    <DCCReference Include="GTI2\UnitGTI2Calibration.pas">
+      <Form>FormGTI2Calibration</Form>
+    </DCCReference>
+    <DCCReference Include="GTI2\UnitMouchard.pas">
+      <Form>FormMouchard</Form>
+    </DCCReference>
+    <DCCReference Include="Mesures XY GTI2_HS3\images pour mesurescaba\Unit1Mesures_XY_Montages.pas">
+      <Form>FormMontagesXY</Form>
+    </DCCReference>
+    <DCCReference Include="Mesures XY GTI2_HS3\Mesures XY GTI2\Unit1Mesures_XY_GTI2.pas">
+      <Form>Form1MesuresCaba_GTI2</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo GTI2\fiches_complémentaire_oscillogti2\UnitOsciG2GestCoulCou.pas">
+      <Form>FormConfigCouleursOscilloGTI2</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo GTI2\fiches_complémentaire_oscillogti2\UnitOsciG2TransRegUtil.pas">
+      <Form>FormOscilloGTI2TransfertRegressiUtilisateur</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo GTI2\fiches_complémentaire_oscillogti2\UnitOscilloGTI2TIMEOUT.pas">
+      <Form>Formtimeout</Form>
+    </DCCReference>
+    <DCCReference Include="Oscilloscope GTI2_HS3\Oscillo GTI2\UnitOscilloGTI2.pas">
+      <Form>FormOscilloGTI2</Form>
+    </DCCReference>
+    <DCCReference Include="Petite Voiture\UnitTITvoiture.pas">
+      <Form>FormTitVoiture</Form>
+    </DCCReference>
+    <DCCReference Include="Regressi\ddeman.pas" />
+    <DCCReference Include="Regressi\UnitTransfertRegressi.pas">
+      <Form>FormTransfertRegressi</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\spectrumFFT.pas">
+      <Form>Fenetre_Spectre</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\UnitSpectreCouleurGraphes.pas">
+      <Form>FormSpectreCouleurGraphes</Form>
+    </DCCReference>
+    <DCCReference Include="spectre_FFT\Unit_aide_FFT_trigger.pas">
+      <Form>FFT_trigger</Form>
+    </DCCReference>
+    <DCCReference Include="Taceur GTI2_HS3\Traceur GTI2\fiches_complémentaire_TRACEUR_GTI2\UnitTracG2ConfCoulCou.pas">
+      <Form>FormConfigCouleurs</Form>
+    </DCCReference>
+    <DCCReference Include="Taceur GTI2_HS3\Traceur GTI2\UnitTraceurGTI2.pas">
+      <Form>FormTraceurGTI2</Form>
+    </DCCReference>
+    <DCCReference Include="Unit Chemin Scilab\Unit1CheminScilab.pas">
+      <Form>Form1CheminScilab</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

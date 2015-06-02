@@ -1,0 +1,86 @@
+
+
+
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+Provider=%Mecacel%
+DriverVer=11/01/2007, 2.0.0
+
+; ------------------
+; Driver information
+; ------------------
+[Manufacturer]
+%Mfg%=DeviceList
+
+[DeviceList]
+%GTI2%=Install,USB\VID_10FC&PID_0170
+
+; --------------------
+; Installation section
+; --------------------
+[DestinationDirs]
+GTI2.Files.Ext = 10,System32\Drivers
+GTI2.Files.Inf = 10,INF
+
+[Install]  ; Installation script for Windows 98/Me
+;CopyFiles=FilesToCopy
+CopyFiles=GTI2.Files.Ext, GTI2.Files.Inf
+AddReg=UpDateRegistry
+
+[Install.NT]  ; Installation script for Windows 2000/XP
+;CopyFiles=FilesToCopy
+CopyFiles=GTI2.Files.Ext, GTI2.Files.Inf
+AddReg=UpDateRegistry
+
+;[FilesToCopy]
+;windrvr6.sys ,,,0x40  ; COPYFLG_OVERWRITE_OLDER_ONLY
+
+[ClassInstall]  ; Register a new class in Windows 98/Me
+AddReg=UpDateRegistry
+
+[ClassInstall32]  ; Register a new class in Windows 2k/XP
+AddReg=UpDateRegistry
+
+[UpDateRegistry]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,, GTI2.sys
+
+[ControlFlags]
+ExcludeFromSelect = *  
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[Install.NT.Services]
+Addservice=GTI2, 0x00000002, Service_Info
+
+[Service_Info]
+DisplayName    = %GTI2.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\GTI2.sys
+
+[SourceDisksFiles]
+GTI2.sys=1
+GTI2.inf=1
+
+[SourceDisksNames]
+1=%DSK%,,,
+
+[GTI2.Files.Ext]
+GTI2.sys
+
+[GTI2.Files.Inf]
+GTI2.inf
+
+; --------------------
+
+[Strings]
+Mecacel="Mecacel Electronique"
+Mfg="Mecacel Electronique"
+GTI2="Interface d'acquisition GTI2"
+GTI2.SvcDesc="GTI2(GTI2.sys)"
+DSK="Origine"

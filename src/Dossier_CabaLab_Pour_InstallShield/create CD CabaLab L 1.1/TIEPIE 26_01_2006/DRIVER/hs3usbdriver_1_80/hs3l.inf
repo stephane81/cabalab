@@ -1,0 +1,95 @@
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+ClassGUID={36fc9e60-c465-11cf-8056-444553540000}
+
+CatalogFile = hs3.cat
+DriverVer = 11/01/2005,1.30.0.1
+; Copyright TiePie engineering 2005
+
+provider=%ProviderName%
+
+
+[SourceDisksNames]
+1 = %InstallationDiskName%,,,
+
+
+[SourceDisksFiles]
+hs3l.sys = 1
+
+
+[DestinationDirs]
+hs3l.Files.Ext = 10,System32\Drivers
+hs3l.Files.Ext.NT = 10,System32\Drivers
+hs3l.Files.Inf = 10,INF
+
+
+[Manufacturer]
+%ManufacturerName%=TiePie
+
+
+[TiePie]
+%USB\VID_0E36&PID_0009.DeviceDesc%=USBhs3l.Dev, USB\VID_0e36&PID_0009
+
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+
+[USBhs3l.Dev]
+CopyFiles=hs3l.Files.Ext, hs3l.Files.Inf
+AddReg=hs3l.AddReg
+
+[USBhs3l.Dev.NT]
+; copyfiles commented out for Win2K to avoid user intervention during install
+CopyFiles=hs3l.Files.Ext.NT, hs3l.Files.Inf.NT
+AddReg=hs3l.AddReg.NT
+
+[USBhs3l.Dev.NT.Services]
+Addservice = USBHS3, 0x00000002, hs3l.AddService
+
+[hs3l.AddService]
+DisplayName    = %hs3l.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\hs3l.sys
+LoadOrderGroup = Base
+
+[hs3l.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,hs3l.sys
+
+[hs3l.AddReg.NT]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,hs3l.sys
+
+[hs3l.Files.Ext]
+hs3l.sys
+
+[hs3l.Files.Ext.NT]
+hs3l.sys
+
+[hs3l.Files.Inf]
+;hs3l.Inf
+
+[hs3l.Files.Inf.NT]
+;hs3l.Inf
+
+
+
+;---------------------------------------------------------------;
+
+[Strings]
+;
+ProviderName = "TiePie engineering"
+;
+ManufacturerName = "TiePie engineering"
+;
+InstallationDiskName = "Hs3 installation disk"
+;
+USB\VID_0E36&PID_0009.DeviceDesc="Handyscope HS3 (before Renumeration)"
+;
+hs3l.SvcDesc="HS3 Loader Driver"
+;
+Hs3_Install= "TiePie engineering HS3 USBdrivers" 

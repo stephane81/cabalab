@@ -1,0 +1,651 @@
+Mail beta testeur :
+
+patrick.millot@ac-grenoble.fr
+
+
+
+liste BUGs :
+
+gbf : TTL puis OFF puis ON : ON ne marche pas  // cplus le cas non ?
+
+
+A prévoir :
+
+si passage de bode à oscillo ou spectre, défault d'amplitude corrigé si on bouge le bouton de réglage du GBF
+GBF : si passage par TTL, pb d'offset après.
+
+
+
+BUG : fermeture D'UN module de CabaLab avec "a propos" ouvert ne ferme pas la fenetre "a propos"....
+
+
+---------------
+FFT
+boite d'enregisterments
+
+
+--------------
+oscillo
+
+trigger : pb de ping pong scrollbarre/tedit a revoir
+transfert regressi : un seul lien a placer dans edition + export excel (+facultatif  copier qui copie ecran vers presse papier)
+                     ca ouvre une fiche "transfert reg" avec les options possibles
+
+FM: Transfertdu ZOOm courant vers regressi	
+ZOOM = zoom sur le quadrillage aussi 
+zoom : on voit pas le rectangle qd il enveloppe toute la fenetre ( + epais ? autre couleur ?)
+zoom : possiblité de deplacer un bord directement plutot que par ascenceur
+zoom : taille min du rectangle zoom plus petite ?
+
+ajout Curseurs ?
+
+
+faire aide :-(
+
+generation de rapport automatique word
+generation de fichier excel
+generation fichier type general pour excel et autres.....
+
+
+/a fair par l'utilisateur/
+enregistrement : remplacer nom par defaut "C1" par "courbe (enregistrée) n°1"
+
+
+----------------------------------
+TRANSITOIRES
+
+faire aide :-(
+
+----------------------------------
+XY
+ 
+
+a creuser : 
+Conseil: 
+ Initialisez à bsClear la propriété Style pour éliminer le scintillement lorsque l'objet est redessiné.
+----------------------------------
+version 1.9.80 SE 
+
+GTI2 calibration des defauts d'offset
+
+
+
+procédure modifiées dans DLLdecl :
+
+ Correction_Amplitude ajouter au type generateur
+valeur initialisée (a partir du fichier) dans initinstrument et intégrée dans lancegenerateur
+Correction_Amplitude ajouter au type acquisition
+valeur initialisée (a partir du fichier) dans initinstrument et intégrée dans les TROIS getmeasurement ( et pas getmesurementraw pour éviter les passage de 32000 à 0 pour les valeurs aux limites)
+
+A faire : gérer les limites du GBF (10 V + correction amplitude)
+          faut-il décaler le trigger aussi ?
+ 
+
+
+----------------------------------
+version 1.9.79 SE
+
+version pour le lycée de casablanca avec bug multipage régressi corrigé.
+
+
+----------------------------------
+version 1.91 FM
+Oscillo/Traceur/Cractériqtiques GTI2 : fond bleu avec gstion en bitmap + plus choix couleurs des voies + exao rapide + toolsbuttons
+
+----------------------------------
+version 1.84 FM
+GBF/HS3 : incorporation modulations JG + adaptations et modifs...
+		
+	PB : 	Modulation PM pas finit marche pas ?
+		Signaux NUM NRZ coef M= pb de visible sur la boite...
+		Signaux NUM petit label freq invisible ?
+		validations des valeurs par rouche ENTER a faire
+		Pb de divisions par zéro (surtout avec l'indice de modulation)
+
+	RQ : les changement de pages déclanches automatiquement les changements de signaux !!!!
+
+
+GBF hs3 GTI2 : Pb position scrollbar offset GBF2 résolut
+	       validation par touche enter : refocalisation sur les fiches pour sortir du tEDIT	
+
+----------------------------------
+version 1.83 FM
+
+dlldecl : prétrig (gti2)
+oscillo : mode exao
+gbf     : bug 1 V au clavier
+	  gbf 2 validation avec la touvhe entrer possible
+	  séparateur décimal fixé au '.' dans le form create
+ 	
+----------------------------------
+version 1.79 FM Re injection des modifs 1_76 SE par copié coller du repertoir BODE(suite a un mélanges de numéros de versions...)
+ 		+ les modifs dlldecl.pas pour dll 2.84 	
+		+ repertoir drivers à utiliser avec cette version
+----------------------------------
+version 1.78 FM HS3 : 	corections bug trigger oscillo
+			transfert regressi mode DDE pour TOUS les logiciels FM
+----------------------------------
+version 1.76 SE
+
+Cabalab : Tiepie : Migration opérée vers DLL et Driver 2.84
+          le bon driver est maintenant dans le repertoire "Driver à fournir avec cette version" de cabalab
+
+Bode : Correction Bug Transfert vers Regressi
+       
+
+
+
+----------------------------------
+version 1.75 FM
+??
+
+
+----------------------------------
+version 1.74 FM
+
+cabalab : pb des form apropos résolu si fermetur d'un modul cabalab avec apropos ouvert
+
+Oscillo : Pré TRIG, avec transfert regressi en temps négatif
+	  
+	  NOUVEAU DLLDECL pour la fonction setPRETRIG...	
+
+	  bases de temps "exao"
+	  curseur trig avec symbole du front
+	  mono coup dispo en facade
+          menu pour obtnir la sélection en facade du mode différentiel
+
+	  et l'ensemble enregistrable et chargable en fichiers config
+
+	  + résolution d'un bug de position de la barre de trig si voie précédente invisible.	
+
+----------------------------------
+version 1.73 FM
+
+OSCILLO : NOM des VOIES Y0 Y1 cohérent avec la facade GTI2
+	  affichage YD si mode différentiel
+	  Fichier quitter : marche
+	  rE DMMENSIONNEMENT DES BOITE OPTIONS en particulier les enregistrements
+	  Nom des variables transfert regressi cohérent avec facade GTI2
+
+Traceur : Yo YD fichier quitter et noms regressi IDEM OSCILO
+
+Carac   : SUpprimer le dernire point possible (directe sur la facade)
+	  Reset du bouttuon " point N0 " ok si supprimer un point ou reset
+	  + idem oscllo et traceur pour les nom et fichier quitter.	
+	  	
+
+----------------------------------
+version 1.72 JG
+
+FFT ajout de l'indication des fréquences
+    ajout de l'autotriggerlevel
+
+----------------------------------
+version 1.71 FM
+
+	!!!!COMPILER en delphi 2006  sur PC SE  !!!!!
+
+GBF : blocage de amplitude et offset ds les modes TTL et DC
+      mode bruit INVISIBLE si GTI2
+
+TRACEUR : chargement de config , validation des valeurs traceur.durée et .dureeAFF
+	  modif qd chg de durée aff si enregistrement finit
+	  position de l'avertissement rupture de flux cmpris ds le resize...	
+
+----------------------------------
+version 1.70 SE
+
+Ajout FormMouchard qui contient les infos de config GTI2 tps réel
+pour la voir, il faut doublecliquer dans le coin bas droite de la fiche Menucabalab
+
+Ajout de l'info de Version dans l'executable (menu projet - option)
+
+fiche chemin regressi retirée du projet
+
+fiche cabalab : menu paramètres tableur désactivé
+fiche Cabalab : correctif bugs affichage
+
+mesureXY GTI2 : initinstrument :-( enlevé du formcreate 
+
+Bode : ajout tempo dans transfert regressi 
+Bode : essai impression a tester sur 1 imprimante
+Bode : Gestion Couleur des fenetres graphiques / Couleurs prédéfinies pour impression : menu option
+Bode : Désactivation Ajout Offset pour GTI2
+
+GBF : AJout symétrie triangle
+
+
+
+
+
+
+
+----------------------------------
+version 1.67 
+
+Intégration du nouveau GBF ds GTI2 et HS3, identique en facade mais code propre!!!!
+(code identique entre hs3 et gti2 SAUF amplitude MAX 10V gti2 et 12V HS3)
+
+bouttons liason direct GBF de l'oscillo  GTI2 visible si GBF non passif (ds le onpaint)
+bouttons liason direct GBF de TRACEUR    GTI2 visible si GBF non passif (ds le onpaint)
+bouttons liason direct GBF de Mesures XY GTI2 visible si GBF non passif (ds le onpaint)
+
+Oscillo mode run/stop : stop pour le transfet des enregistrements : plus de fluiditée ds la affichages des enregistrements
+
+----------------------------------
+version 1.66 
+
+Disparition des uses demoDDE et donc du projet et des fichiers demodde demoddeman du repertoire...
+
+----------------------------------
+version 1.65/64 FM
+
+transfert regressi en interne pour oscillo GTI2 enregistrement muiltipages ET 
+							  MONO page
+							  Utilisateur instantané
+							  instantane new fichier et new page par menu ds l'oscillo 	
+
+transfert regressi en interne pour TRACEUR GTI2
+
+sleep250 pour transferrer deux pages successivement ds regressi pour oscillo gti multipages et monopage
+RQ : le problème apparait en faite uniquement pour le transfert de la première page qd regressi fermé....
+A OPTIMISER....avec systématiquement une question new pages/newfichier pour clarifier....
+----------------------------------
+version 1.63 FM
+
+DEBUG timers de mesures XY qui tourne qd fiche closed...
+
+
+
+ré organisations des positions de units pour TRACEUR HS3 et GTI2 
+avec changements des noms pour GTI2 et dernière version (sans le transfert interne REGRESSI)
+
+----------------------------------
+version 1.62 FM
+ré organisations des positions de units pour OSCILLOSCOPE HS3 et GTI2 
+avec changements des noms pour GTI2 et dernière version (sans le transfert interne REGRESSI)
+
+----------------------------------
+version 1.61 FM
+
+ré organisations des positions de units pour mesures XY caba HS3 et GTI2 
+avec changements des noms pour GTI2 et dernière version (transfett regressi en interne)
+----------------------------------
+version 1.60 SE FM
+
+début régressi centralisé
+sortie des fiches HS3 du projet GTI2 (a faire netooyer unitcabalab)
+
+----------------------------------
+version 1.59 SE FM
+
+nettoyage organisation repertoire
+nouveau rep fiche complémentaire cabalab ( a propos, fantome)
+dep unitfreqgti2 vers rep Dlldecl GTI2
+bode : bug formcreate
+
+
+
+----------------------------------
+version 1.58 Salon
+
+non utilisée !!!!!!!
+
+----------------------------------
+version 1.57 SE
+
+2 projets différents HS3 GTI2
+2 Fiches formcabalab différentes !!
+
+Tit voiture : réécriture propre du code
+
+
+
+----------------------------------
+version 1.56 SE JG
+FFT : Régressi dynamique
+
+version 1.55 FM
+bug boutons gti2
+???
+
+
+----------------------------------
+version 1.53 SE FM
+ajout traceur gti2
+
+----------------------------------
+version 1.51 SE
+
+Ajout unitTransfertRegressi qui permet le transfert Regressi dynamique.
+
+correctif bug bode: quitter Bode en cours de balayage + modifier réglages du gbf + retour sous bode pour reprendre le balayage en cours = erreur
+Transfert Regressi dynamique ajouté à Bode 
+
+
+----------------------------------
+version 1.50 SE
+correctif bug : freq d'acquisition fausses ( reload impossible avec Fech = 10MHz, nouveau tableau de freq créé)
+                setfuncgenfreq,setsamplefreq : plus grande valeur plante cabalab. (algo modifié)
+
+startmeasurement créé, avec réglage du timeout par settimeout, 
+                attention timer windows qui ne marche pas : la valeur qu'on tape est la valeur minimale du timeout
+                plus l'ordi est lent ou ralenti, plus la vraie valeur du time out dépassera la valeur demandée.
+Bode : fonctionne en 4 voies, choix dans menu option. Pb de trigger avant 10 kHz. Pb de signal avant 500 Hz.
+FFT  : fonctionne . pb de trigger
+
+
+----------------------------------
+version 1.44 SE
+
+Intégration GTI2 dans cabalab. le choix se fait dans l'UNIT  CABALAB EN HAUT par une directive de compilation.
+Gestion des Mutex par directive de compilation: on peut executer 1 cabalab gti2 en meme temps qu'un cabalab hs3 
+oscillo 4 voies ajouté (1 modif apportée formcreate executé que si mode = gti2)
+2 nouveaux repertoires dlldeclhs3 et dlldeclgti2
+      en cas de nouvelle dll tiepie il faut lui ajouter les lignes du fichier "a ajouter a dlldecl tiepie.txt"
+ 
+
+
+---------------------------------------------------------------------------------------------------------
+version 1.43 JG
+
+quelque amélioration sur les aides (non fini)
+nouvelle base de fréquence pour FFT
+----------------------------------
+version 1.42 JG
+
+aide analyseur
+AIDE BODE
+
+
+----------------------------------
+version 1.41 FM
+
+passage en delphi 2006 : corection des sens de défilement des scrolbarres du gbf!!!!
+décalibrage oscillo
+
+
+----------------------------------
+version 1.39 SE
+
+gestion petite voiture
+bug edition a propos résolu
+
+----------------------------------
+version 1.38 SE
+gestion Cabalab/Cabalab3 pour les fenetres cabalab et a propos
+gestion uniquement par 3 constantes en haut de unitcabalab à modifier:
+      const CabalabCube = True;
+            Version = '1.3';
+            DateVersion = '20 janvier 2006';
+
+Image Cabalab du démarrage au centre de l'écran
+Ajout Menu A propos dans tous les programmes
+Spectre :  Modif Menu ( majuscules + scopeoff en francais + apropos)
+Petite Voiture : image voiture + Accès par menu et pas par icone.
+
+----------------------------------
+version 1.37FM
+
+correction du bug de fermetur de cabalab si HS3 non connecté.
+
+----------------------------------
+version 1.36 JG 
+
+décalage du zéro optimisé
+retrait de GBF dans le menu
+----------------------------------
+version 1.35 SE
+
+cABALAB3 POLICE du titre  : TEKTON PRO BOLD OBLIQUE !
+
+messagerie créée
+mail : cabalab@gmail.com 
+mot de passe : EglyGuittardMerle 
+webmail : taper "g" dans google
+
+
+
+
+----------------------------------
+version 1.34 FM
+
+OSCILLO :
+gestion du "onpaint" de l'écran principal de l'oscillo si en mode ONE SHOT
+avec teste ds le "on activate"
+gestion d'un onclose en mode one shot pour le reset complet de l'oscillo
+
+gestion d'une tentative de monocoup sans trigger par message d'avertissement
+
+pour tous les bouttons gbf ajout de :
+formGBF.WindowState := wsNormal ; // met la fenetre en taille normale (au cas ou elle est iconifiée) 1_34FM
+pour la gestion du cas iconifié...
+
+modif des bouton de rapels de cabalab,ds oscillo transitoire GBF et caractéristique, avec en plus du bringtofront un wswindowsstate : normal
+
+
+cabalab : wswindowsstate:NORMAL si toute les appli fermées fais ds gestions bouttons
+	dés le clck sur un boutton d'appli minimised de cabalab
+bode et FFT : si click sur le logo cabalab retour de la fiche cabalab en wswindowsstate : normal
+
+FFT : ajout du boutton gbf si cveluici en fct. avec mem procédure que pour les autres applis
+
+Transitoire : si mode STOP le onpaint retrace les courbes qd mm pour résoudre un ré affichage de la fiche.
+
+
+----------------------------------
+version 1.33 SEFM
+
+menu cabalab : apropos....
+
+
+et modif interface pour chemin regressi
+
+ 
+----------------------------------
+version 1.32 SEFM
+cabalab : fichefantome + resolution bug sur icones
+ 
+----------------------------------
+
+version 1.31 SE
+Cabalab : autoriser une seule instance
+
+
+ 
+----------------------------------
+version 1.30 FM
+
+gestion gbf/oscillo
+
+FormActivate ; Oscillocaba.Repaint; 
+et::::
+procedure TOscilloCaba.FormPaint(Sender: TObject);          //     1_30FM
+begin
+   if unitcabalab.passif[2]= false then
+      ButtonCabaLabAutreAPLI.Visible:=true
+   else
+      ButtonCabaLabAutreAPLI.Visible:=false;
+end;
+
+gestion GBF/caractéristiques de composants :IDEM
+
+gestion GBF/transitoires de composants :IDEM
+ 
+----------------------------------
+version 1. 
+----------------------------------
+version 1.28 FM
+Oscillo : 	modif menu fichier regressi 	10% basse résolution
+						100% haute résolution
+		warning bdt décalibrée ajout d'un visible = false aprés fin du timer
+		regressi utilisateur ajout indication basse et haute résolution
+		multimètre notation U a la place de V pour les noms des tensions
+
+cabalab :	correctif du bug : éteindre cabalab avec gbf allumé et gbf en fonctionnement qd mm
+		avec  SetFuncGenOutputOn ( 0 ) ;  ds le form close de cabalab
+
+GBF     : 	//reset de l'offset ds le cas ou ttl avant le changement de signal
+		avec if GBF.I_signal=4 then  ds le signalCLICK   
+		begin
+    		GBF.offset:=0;      
+    		Button3Click(sender); //procedure du bouton reset naturel de l'offset
+    		end;
+		//re positionnemet de la scrollbar ds GBF2
+                ScrollBarAmpliGBF2.position:=round(GBF.amplitude*GBF.coef_amplitude);       //1_28 pour le  *GBF.coef_amplitude!!!!!!
+ 		+ gestion de l'entreé des valeurs au clavier modifiée
+----------------------------------
+version 1.27 SE
+
+cABALAB :icones boutons mis a jour
+CABALAB : clic sur icone désiconifie l'application
+        : projetcabalab renommer en cabalab et fiche cabalab renommée en FormCabalab 
+Bode : Taille de fenetre réglable et de base en 1024 748
+Bode : Clic Image cabalab ouvre Cabalab
+Bode : can resize et on maximize et on minimize autorisés
+
+
+----------------------------------
+version 1.26 FM 
+cabalab	:	on maximize : false
+		borderstyle : bssingle
+oscillo : 
+		modif ergonomie réglages trigger et HYST.
+		utilisation du unit regressispecdecl pour les transferts.
+TRANSITOIRES:
+		graduations en permanence mieux placées
+		on maximize : NON
+		can resize : false
+		borderstyle : bssingle
+GBG :		
+		on maximize : NON
+		on monimize : oui
+		can resize : false
+		borderstyle : bssingle
+
+XY : 		on maximize : NON
+		can resize : false
+		borderstyle : bssingle
+		utilisation du unit regressispecdecl pour les transferts.
+		visible:=false  pour le menu dessin des montages 1 et 2 et calculs associés......
+----------------------------------
+version 1.25 by JG
+FFT: ajout des axes en dBV et V efficace
+     ajout de la fenetre Kaiser 
+     quelques nettoyages!
+     réglage du problème de non ouverture si passage par oscillo
+     passage des bloc1 et bloc2 dans le projet
+     réduction fenêtre
+----------------------------------
+version 1.24FM 
+GBF : 	réglages valeurs avant le premier ON possible
+	GBF2/GBf1 refonte de la gestions de toute les valeurs, positions...
+	menu mode : pas dans le trigger mais en premier
+----------------------------------
+version 1.23 FM
+bug button off/on du gbf tj on aprés un formclosed OK
+sensibilitée 20V/div en plus sur l'oscillo
+GBF : parm précis , changemennt des saut d'affichage de calibres MHz/Khz/Hz 
+	refonte total de l'interface GBF2
+----------------------------------
+version 1.22 JG by FM
+
+FFT : 	solutions pour les pbs de calibres entre les deux voies
+	fenetre de Hanning par défault au démarrage
+
+PB :	Si on allume le ffTspectre, aprés avopir utilisé l'oscilo, il faut le faire en deux fois. 
+
+----------------------------------
+version 1.21 FM
+
+!!!!Recuperation des fichier JG de la version 1_20JG fantome (a vérifier par l'auteur!!!) : bloc FFt pour REGRESSI, et répertoire des sources delphi de la FFT.
+	ainsi que le texte des modifs de l'auteur de la version fantome :		
+				version 1.20"FANTOME"
+				problème avec la nouvelle dll______pour le 1_21 FM travail tj avec le driver et la DLL précédente!!!!!
+
+
+Oscilloscope :  initialisation propre de tous les réglages (boutons) a chaque fermeture (formCLOSED) 
+		Nouveau calibre 10V/div soit 40V max  
+
+one shot = mono coup 
+trigger = NO TRIG devient "aucun"
+bug BI ecran vers XY : bug irréversible de l'affichage et vise versa RESOLU
+frequencementre = a quoi servent les boutons ///a rien pour le moment : Visible:=false;
+
+premier pas pour l'option d'accumulation (diagrame de l'oiel) purement visuel, CAD pas de de fichier dispo!!!
+Rq option disponible ds le menu enregistrement pour l'instant
+
+décalibrage base de temps : 50% MAX
+décalibrage base de temps : WARNING CLIGNOTANT!
+
+
+Position de la boite de dialogue MODE : en haut
+ajout du logo cabalab avec liason BrigToFront de cabalab
+
+
+
+GBF :
+boutons ON OFF down/up selon l'état actuel.
+
+
+CARACTERISTIQUES DE COMPOSANTS:
+ajout du logo cabalab avec liason BrigToFront de cabalab
+modification de la gestions des séries de mesures : retour possible dans les série poue AJOUT de points
+RQ : pour l'instant pas de supréssion de points possible!!
+
+TRANSITOIRE :
+ajout du logo cabalab avec liason BrigToFront de cabalab
+bases de temps visible tj.
+modif texte du bouton de démarage de l'acquisition par le formCLOseD
+option calibre auto en bouton radio avec les autres calibres : NON uniquement en options ::.
+calibre auto A cocher dans le menu calibre 
+bouton stop/arret de l'acq en cours
+
+CABALAB :
+
+SpeedButtonConnexionClick(Sender); ds le formecreate de cabalab
+
+modif du déroulement d'un rattage de connexion :
+//showmessage('Appareil non trouvé. Vérifier que l''appareil est bien connecté puis réessayer');
+LabelConnexion2.Caption := 'Lancement de la connexion de CabaLab3 avec l''appareil : Vérifier que l''appareil est bien connecté puis réessayer';
+
+RQ : remplacer "l'apparreil" par "l'interface" dans le texte NON ?
+
+FormCanResize (de cabalab):= FALSE
+//vérifier l'allure finale pour les taille à l'écran, PB de clientwidth a revoir!!!
+
+----------------------------------
+version 1.20 SE	 
+Bode : TimeOut adaptatif (= 10 périodes) mauvais branchement se voit plus vite pour fmin > 1 kHz
+Bode : Fin Bug Plantage systématique au passage en calibres manuels 
+Cabalab : icone bode modifié  
+
+----------------------------------
+version 1.19 SEJG
+Analyseur: Fin bug en quittant FFT et en y revenant.
+Analyseur: message" voulez vous quitter appli" enlevé
+----------------------------------
+version 1.18 SE
+Bug résolu : bode qui continue a tourner meme qd on le ferme ( visible off insuffisant) et interagit avec oscillo et gbf !
+Bode : Fermeture/reouverture de bode sur une meme session cabalab = Bode est réouvert telle qu'à la fermeture.
+Bode : message" voulez vous quitter appli" enlevé
+Ajout de la tentative de connexion auto au démarrage
+
+----------------------------------
+version 1.17 SE pour salon
+Modifications des icones cabalab
+ajout d'un programme nettoyer.bat dans la racine qui supprime les fichiers temporaires de delphi : *.~*
+
+----------------------------------
+version 1.16 FM
+gestion bouttons cabalab actif/passif
+FFt integré
+bug cabalab résolu: fermeture fenetre cabalab avec oscillo qui tourne entraine message d'erreur.
+
+
+----------------------------------
+Version 1.12 Stéphane
+Bode : Amélioration Design Bode
+Bode : Enlevement fenetre zoom sur une periode
+Cabalab: clic sur 1 bouton cabalab entraine mise en premier plan du prog correspondant.
+Cabalab: Nettoyage fichiers inutiles

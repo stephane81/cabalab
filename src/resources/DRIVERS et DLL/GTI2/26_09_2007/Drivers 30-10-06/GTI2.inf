@@ -1,0 +1,89 @@
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+Provider=%Mecacel%
+DriverVer=30/10/2006, 2.2.0
+
+;................................
+;      Driver information
+;................................
+[Manufacturer]
+%Mecacel%=DeviceList
+
+[DeviceList]
+%GTI2%=Install, USB\VID_10FC&PID_0170
+
+;................................
+;     Installation section
+;................................
+[Install]  ; Installation script for Windows 98/Me
+CopyFiles=FichierInfo,FichierDriver
+AddReg=UpDateRegistry
+
+[Install.NT]  ; Installation script for Windows 2000/XP
+CopyFiles=FichierInfo,FichierDriver
+AddReg=UpDateRegistry
+
+
+[DestinationDirs]
+FichierDriver = 10,System32\Drivers
+FichierInfo = 10,INF
+
+[UpDateRegistry]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,GTI2.sys
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;[ControlFlags]
+;ExcludeFromSelect = * ; Remove all devices listed in this ;INF file
+
+
+;................................
+;       Services section
+;................................
+[Install.Services]
+Addservice = GTI2, 0x00000002, Service_Info
+
+[Install.NT.Services]
+Addservice = GTI2, 0x00000002, Service_Info
+
+[Service_Info]
+DisplayName    = %GTI2.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_AUTO_START
+;;StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\GTI2.sys
+
+;................................
+;     Source file information
+;................................
+[SourceDisksFiles]
+GTI2.sys=1  ; This indicates that the GTI2.sys file is located on disk number 1 
+
+[SourceDisksNames]
+1=%DSK%,,  ; This indicates that disk number 1 as label DSK
+
+
+[FichierInfo]
+GTI2.inf,GTI2.in_
+
+[FichierDriver]
+GTI2.sys
+
+
+;--------------------------------------------------
+;--------------------------------------------------
+
+;................................
+;     CHAINE DE CARACTERE
+;................................
+
+[Strings]
+Mfg="Interface GTI2"
+Mecacel="Mecacel Electronique"
+GTI2="Interface d'acquisition GTI2 (Mode installation -Disk-)"
+GTI2.SvcDesc="GTI2(GTI2.sys)"
+DSK="Installation des Drivers"

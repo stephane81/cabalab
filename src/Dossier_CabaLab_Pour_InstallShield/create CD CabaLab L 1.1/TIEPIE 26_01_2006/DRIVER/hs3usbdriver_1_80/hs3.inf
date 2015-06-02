@@ -1,0 +1,133 @@
+[Version]
+Signature="$CHICAGO$"
+
+Class=TiePieScope
+ClassGuid={AF43275C-FB24-4371-BAF8-2BA656FB33E6}
+CatalogFile = hs3.cat
+DriverVer = 08/24/2005, 1.30.0.0
+; Copyright TiePie engineering 2005
+
+Provider = %ProviderName%
+
+
+[SourceDisksNames]
+1 = %InstallationDiskName%,,,
+
+
+[SourceDisksFiles]
+hs3r98.sys = 1
+hs3r.sys = 1
+hsclass.dll = 1
+hsclas98.dll = 1
+
+
+
+[DestinationDirs]
+hs3.Files.Ext = 10,System32\Drivers
+hs3.Files.Ext.NT = 10,System32\Drivers
+hs3.Files.Inf = 10,INF
+ClassInstallerCopyFiles = 10,system
+ClassInstallerCopyFiles.NT = 11
+
+
+[Manufacturer]
+%ManufacturerName% = TiePie
+
+
+[TiePie]
+%USB\VID_0E36&PID_0008.DeviceDesc%=USBhs3.Dev, USB\VID_0e36&PID_0008
+
+
+
+; ================= Class section =====================
+
+[ClassInstall]
+Addreg=AddClassReg     
+CopyFiles=ClassInstallerCopyFiles
+
+[AddClassReg]
+HKR,,,,%ClassName%
+HKR,,Installer,,"hsclas98.dll,ClassInstall"
+HKR,,Icon,,102
+
+
+[ClassInstall32.NT]
+Addreg=AddClassReg.NT     
+CopyFiles=ClassInstallerCopyFiles.NT
+
+[AddClassReg.NT]
+HKR,,,0,%ClassName%
+HKR,,Icon,,100
+HKR,,Installer32,,"hsclass.dll,ClassInstaller"
+
+[ClassInstallerCopyFiles]
+hsclas98.dll
+
+[ClassInstallerCopyFiles.NT]
+hsclass.dll
+
+
+; ====================================================
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[USBhs3.Dev]
+CopyFiles=hs3.Files.Ext, hs3.Files.Inf
+AddReg=USBhs3.AddReg
+
+[USBhs3.Dev.NT]
+; copyfiles commented out for Win2K to avoid user intervention during install
+CopyFiles=hs3.Files.Ext.NT, hs3.Files.Inf.NT
+AddReg=USBhs3.AddReg.NT
+
+[USBhs3.Dev.NT.Services]
+Addservice = HS3r, 0x00000002, hs3.AddService
+
+[hs3.AddService]
+DisplayName    = %hs3.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\hs3r.sys
+LoadOrderGroup = Base
+
+[USBhs3.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,hs3r98.sys
+
+[USBhs3.AddReg.NT]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,hs3r.sys
+
+[hs3.Files.Ext]
+hs3r98.sys
+
+[hs3.Files.Ext.NT]
+hs3r.sys
+
+[hs3.Files.Inf]
+;hs3.Inf
+
+[hs3.Files.Inf.NT]
+;hs3.Inf
+
+
+
+;---------------------------------------------------------------;
+
+[Strings]
+;
+ProviderName = "TiePie engineering"
+;
+ManufacturerName = "TiePie engineering"
+;
+InstallationDiskName = "Hs3 installation disk"
+;
+USB\VID_0E36&PID_0008.DeviceDesc="Handyscope HS3"
+;
+hs3.SvcDesc="HS3 Driver"
+;
+ClassName = "TiePie Scope"
+;
+Hs3_Install= "TiePie engineering HS3 USBdrivers" 

@@ -1,0 +1,94 @@
+
+const E_NO_TRIGGER      = $0040;
+
+
+function SetCh1InputOn ( wValue : word ) : word ;
+function SetCh2InputOn ( wValue : word ) : word ;
+function SetCh3InputOn ( wValue : word ) : word ;
+function SetCh4InputOn ( wValue : word ) : word ;
+function GetCh1InputOn : word ;
+function GetCh2InputOn : word ;
+function GetCh3InputOn : word ;
+function GetCh4InputOn : word ;
+function SetCh1DiffOn ( wValue : word ) : word ;
+function SetCh2DiffOn ( wValue : word ) : word ;
+function SetCh3DiffOn ( wValue : word ) : word ;
+function SetCh4DiffOn ( wValue : word ) : word ;
+function GetCh1DiffOn : word ;
+function GetCh2DiffOn : word ;
+function GetCh3DiffOn : word ;
+function GetCh4DiffOn : word ;
+function StartMeasurementfrancois : word ;
+function GetMeasurementRawfrancois( wCh1 : PTWArray;wCh2: PTWArray) : word ;
+function GetMeasurementfrancois (dCh1 : PDArray;dCh2: PDArray): word;
+function _DefineUSB  (hHandle: THandle): LongInt  ;
+
+
+
+var   Ch3DoubleArray            : DArray;
+      Ch4DoubleArray            : DArray;
+      Ch3WordArray              : TWArray;
+      Ch4WordArray              : TWArray;
+
+
+// a la fin :  ------------------------------
+
+function SetCh1InputOn ( wValue : word ) : word ;
+begin end;
+function SetCh2InputOn ( wValue : word ) : word ;
+begin
+end;
+function SetCh3InputOn ( wValue : word ) : word ;
+begin
+end;
+function SetCh4InputOn ( wValue : word ) : word ;
+begin
+end;
+function GetCh1InputOn : word ;
+begin
+end;
+function GetCh2InputOn : word ;
+begin
+end;
+function GetCh3InputOn : word ;
+begin
+end;
+function GetCh4InputOn : word ;
+begin
+end;
+function SetCh1DiffOn ( wValue : word ) : word ;
+begin
+end;
+function SetCh2DiffOn ( wValue : word ) : word ;
+begin
+end;
+function SetCh3DiffOn ( wValue : word ) : word ;
+begin
+end;
+function SetCh4DiffOn ( wValue : word ) : word ;
+begin
+end;
+function GetCh2DiffOn : word ;
+begin
+end;
+function GetCh1DiffOn : word ;
+begin
+end;
+function GetCh3DiffOn : word ;
+begin
+end;
+function GetCh4DiffOn : word ;
+begin
+end;
+function StartMeasurementfrancois : word ;
+begin
+end;
+function GetMeasurementRawfrancois( wCh1 : PTWArray;wCh2: PTWArray) : word ;
+begin
+end;
+function GetMeasurementfrancois (dCh1 : PDArray;dCh2: PDArray): word;
+begin
+end;
+function _DefineUSB  (hHandle: THandle): LongInt  ;
+begin
+end;

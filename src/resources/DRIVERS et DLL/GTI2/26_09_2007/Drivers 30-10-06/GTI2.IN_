@@ -1,0 +1,63 @@
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+Provider=%Mecacel%
+DriverVer=30/10/2006, 2.2.0
+
+[Manufacturer]
+%Mecacel%=Mecacel
+
+[Mecacel]
+%GTI2%=GTI2.Dev, USB\VID_10FC&PID_0170
+
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+GTI2.Files.Ext = 10,System32\Drivers
+GTI2.Files.Inf = 10,INF
+
+[GTI2.Dev]
+CopyFiles=GTI2.Files.Ext, GTI2.Files.Inf
+AddReg=GTI2.AddReg
+
+[GTI2.Dev.Services]
+Addservice = GTI2, 0x00000002, GTI2.AddService
+
+[GTI2.Dev.NT]
+;copyfiles commented out for Win2K to avoid user intervention during install
+;CopyFiles=GTI2.Files.Ext, GTI2.Files.Inf
+AddReg=GTI2.AddReg
+
+[GTI2.Dev.NT.Services]
+Addservice = GTI2, 0x00000002, GTI2.AddService
+
+[GTI2.AddService]
+DisplayName    = %GTI2.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\GTI2.sys
+LoadOrderGroup = Base
+
+[GTI2.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,GTI2.sys
+
+[GTI2.Files.Ext]
+GTI2.sys
+
+[GTI2.Files.Inf]
+GTI2.inf
+
+[SourceDisksNames] 
+79=%DSK%, "", 0002
+
+;---------------------------------------------------------------;
+
+[Strings]
+Mecacel="Mecacel Electronique"
+GTI2="Interface d'acquisition GTI2 (Driver Windows)""
+GTI2.SvcDesc="GTI2(GTI2.sys)"
+DSK="Origine"

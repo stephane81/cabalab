@@ -1,0 +1,95 @@
+EVARISTE REGRESSI WINDOWS 1.0
+£2 NOM VAR
+v1
+v2
+£2 GENRE VAR
+0
+0
+£2 UNITE VAR
+V
+V
+£2 FORMAT VAR
+0
+0
+£2 AFF VAR
+0
+0
+£2 PRECISION VAR
+4
+4
+£2 MECA VAR
+0
+0
+£2 SIGNIF VAR
+voie 1
+voie 2
+£2 INCERTITUDE
+
+
+£10 NOM SAUVE
+
+
+
+
+
+
+
+
+
+
+£10 UNITE PARAM
+
+
+
+
+
+
+
+
+
+
+£1 TRIGO
+1
+£1 uniteSI
+0
+£4 MEMO GRANDEURS
+'CaractéristiqueXY
+'v1=voie 1
+'v2=voie 2
+
+£2 ACQUISITION
+FICHIER
+
+£0 GRAPHE VAR
+&0 LIGNE
+&0 COULEUR
+&0 MOTIF
+&0 X
+&0 Y
+&0 TRACE
+&0 MONDE
+&3 GRADUATION
+0
+0
+0
+&3 ZERO
+1
+1
+1
+&16 OPTIONS
+1
+2
+0
+3
+3
+0
+0
+0
+0
+0
+0
+0
+5
+0
+1
+1
